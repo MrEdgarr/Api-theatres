@@ -1,12 +1,10 @@
 const pool = require("../config/database");
 
-const SELECT_SQL =
-    "films.id, films.name, films.describe, films.trailer, films.cens, films.genres, " +
-    "DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.releases), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as releases, " +
-    "DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.duration), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as duration, " +
-    "films.poster, films.backdrop, films.country, films.director, films.producer, films.actor, " +
-    "DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.updated_at), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as updated_at, " +
-    "DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.created_at), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as created_at";
+const SELECT_SQL = `films.id, films.name, films.describe, films.trailer, films.cens, films.genres, 
+    DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.releases), @@session.time_zone, '+07:00'), '%d/%m/%Y') as releases, 
+    duration, films.poster, films.backdrop, films.country, films.director, films.producer, films.actor, 
+    DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.updated_at), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as updated_at, 
+    DATE_FORMAT( CONVERT_TZ(FROM_UNIXTIME(films.created_at), @@session.time_zone, '+07:00'), '%H:%i:%s %d/%m/%Y') as created_at`;
 
 const filmController = {
     // ----------------------------------- GET ALL API -----------------------------------
