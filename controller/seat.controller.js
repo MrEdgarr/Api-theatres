@@ -1,9 +1,4 @@
 const pool = require("../config/database");
-/**
- * lay thong tin rap chieu => city {cinema}
- * lay thong tin lich chieu phim theo rap (where film, cinema, date)  => cinema => { schedule }
- * lay thong tin lich chieu phim theo rap ( cinema, date)  => film => { schedule }
- **/
 const seatController = {
     getAll: async (req, res) => {
         try {

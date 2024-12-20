@@ -12,6 +12,7 @@ var usersRouter = require("./routes/auth.routes");
 var filmRouter = require("./routes/film.routes");
 var scheduleRouter = require("./routes/schedule.routes");
 var seatRouter = require("./routes/seat.routes");
+var cityRouter = require("./routes/city.routes");
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use("/users", usersRouter);
 app.use("/films", filmRouter);
 app.use("/schedules", scheduleRouter);
 app.use("/seats", seatRouter);
+app.use("/citys", cityRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
