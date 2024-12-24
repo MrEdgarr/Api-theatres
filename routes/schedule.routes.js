@@ -8,9 +8,5 @@ router.post(
     "/getMovieShowtimeInformation",
     schedulesController.getMovieShowtimeInformation
 );
-router.post(
-    "/getShowtimeInformation",
-    schedulesController.getShowtimeInformation
-);
 
 module.exports = router;
